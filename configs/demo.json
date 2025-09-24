@@ -1,7 +1,8 @@
 {
   "phone": "+420123456789",
   "displayPhone": "+420 123 456 789",
-  "icon": "🍕",
+  "icon": "",
+  "iconHtml": "&#127829;",
   "title": "Order Pizza",
   "subtitle": "Call now! Delivery in 30 minutes",
   "infoText": "Business Hours: 10:00-23:00 daily",
@@ -11,21 +12,17 @@
   ],
   "style": {
     "fontFamily": "'Inter', system-ui, sans-serif",
-    "mainBtnFont": "'JetBrains Mono', 'SF Mono', monospace",
+    "valueFontFamily": "'JetBrains Mono', 'SF Mono', monospace",
     "colors": {
       "background": "linear-gradient(135deg, #25d366 0%, #128c7e 100%)",
-      "text": "white"
+      "text": "#ffffff",
+      "blockBackground": "rgba(255, 255, 255, 0.22)",
+      "blockBorder": "rgba(255, 255, 255, 0.35)",
+      "blockHover": "rgba(255, 255, 255, 0.30)",
+      "borderHover": "rgba(255, 255, 255, 0.55)"
     },
-    "borderRadius": {
-      "widget": 16,
-      "mainBtn": 14,
-      "actionBtn": 10
-    },
-    "sizes": {
-      "fontSize": 1.0,
-      "padding": 28,
-      "actionsGap": 12
-    },
+    "borderRadius": { "widget": 16, "blocks": 14 },
+    "sizes": { "fontSize": 1.0, "padding": 28, "blockPadding": 18, "gap": 12 },
     "shadow": {
       "widget": "0 16px 48px rgba(37,211,102,0.25)",
       "widgetHover": "0 24px 64px rgba(37,211,102,0.35)",
