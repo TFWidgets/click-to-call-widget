@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    // Базовые CSS стили с CSS-переменными для полной кастомизации
+    // Базовые CSS стили с унифицированными CSS-переменными (как у countdown timer)
     const inlineCSS = `
         .ctc-container {
             font-family: var(--ctc-font, 'Inter', system-ui, sans-serif);
@@ -70,11 +70,11 @@
             width: var(--ctc-main-btn-width, 88%);
             max-width: var(--ctc-main-btn-max-width, 320px);
             margin: 0 auto 18px auto;
-            background: var(--ctc-main-btn-bg, rgba(255, 255, 255, 0.22));
+            background: var(--ctc-block-bg, rgba(255, 255, 255, 0.22));
             color: var(--ctc-main-btn-color, inherit);
-            border: var(--ctc-main-btn-border, 2px solid rgba(255, 255, 255, 0.35));
-            padding: var(--ctc-main-btn-padding, 18px 24px);
-            border-radius: var(--ctc-main-btn-radius, 14px);
+            border: var(--ctc-block-border, 2px solid rgba(255, 255, 255, 0.35));
+            padding: var(--ctc-block-padding, 18px 24px);
+            border-radius: var(--ctc-block-radius, 14px);
             font-size: var(--ctc-main-btn-size, 1.15em);
             font-weight: var(--ctc-main-btn-weight, 700);
             cursor: pointer;
@@ -83,14 +83,14 @@
             backdrop-filter: blur(12px);
             box-sizing: border-box;
             letter-spacing: var(--ctc-main-btn-spacing, 0.6px);
-            font-family: var(--ctc-main-btn-font, 'JetBrains Mono', 'SF Mono', monospace);
+            font-family: var(--ctc-value-font, 'JetBrains Mono', 'SF Mono', monospace);
             position: relative;
             z-index: 1;
         }
         
         .ctc-main-btn:hover {
-            background: var(--ctc-main-btn-bg-hover, rgba(255, 255, 255, 0.3));
-            border-color: var(--ctc-main-btn-border-hover, rgba(255, 255, 255, 0.55));
+            background: var(--ctc-block-bg-hover, rgba(255, 255, 255, 0.3));
+            border-color: var(--ctc-block-border-hover, rgba(255, 255, 255, 0.55));
             transform: translateY(-2px) scale(1.02);
             box-shadow: var(--ctc-main-btn-shadow-hover, 0 8px 24px rgba(0,0,0,0.25));
         }
@@ -98,7 +98,7 @@
         .ctc-actions {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: var(--ctc-actions-gap, 12px);
+            gap: var(--ctc-gap, 12px);
             margin-top: var(--ctc-actions-margin, 18px);
             position: relative;
             z-index: 1;
@@ -178,7 +178,7 @@
             }
             .ctc-actions {
                 grid-template-columns: 1fr;
-                gap: var(--ctc-actions-gap-mobile, 10px);
+                gap: var(--ctc-gap-mobile, 10px);
             }
         }
     `;
@@ -271,11 +271,13 @@
         `;
     }
 
+    // УНИФИЦИРОВАННАЯ СТРУКТУРА (точно как у countdown timer)
     function getDefaultConfig() {
         return {
             phone: "+420123456789",
             displayPhone: "+420 123 456 789",
-            icon: "🍕",
+            icon: "", // Текстовая иконка (может быть пустой)
+            iconHtml: "🍕", // HTML иконка (эмодзи, SVG, HTML entities)
             title: "Order Pizza",
             subtitle: "Call now! Delivery in 30 minutes",
             infoText: "Business Hours: 10:00-23:00 daily",
@@ -285,48 +287,29 @@
             ],
             style: {
                 fontFamily: "'Inter', system-ui, sans-serif",
-                mainBtnFont: "'JetBrains Mono', 'SF Mono', monospace",
+                valueFontFamily: "'JetBrains Mono', 'SF Mono', monospace",
                 colors: {
                     background: "linear-gradient(135deg, #25d366 0%, #128c7e 100%)",
                     text: "white",
-                    title: "inherit",
-                    subtitle: "inherit",
-                    info: "inherit",
-                    mainBtn: "inherit",
-                    mainBtnBg: "rgba(255, 255, 255, 0.22)",
-                    mainBtnBorder: "rgba(255, 255, 255, 0.35)",
-                    mainBtnBgHover: "rgba(255, 255, 255, 0.3)",
-                    mainBtnBorderHover: "rgba(255, 255, 255, 0.55)",
-                    actionBtn: "rgba(255, 255, 255, 0.9)",
-                    actionBtnBg: "rgba(255, 255, 255, 0.12)",
-                    actionBtnBorder: "rgba(255, 255, 255, 0.3)",
-                    actionBtnBgHover: "rgba(255, 255, 255, 0.18)",
-                    actionBtnBorderHover: "rgba(255, 255, 255, 0.5)"
+                    blockBackground: "rgba(255, 255, 255, 0.22)",
+                    blockBorder: "rgba(255, 255, 255, 0.35)",
+                    blockHover: "rgba(255, 255, 255, 0.3)",
+                    borderHover: "rgba(255, 255, 255, 0.55)"
                 },
                 borderRadius: {
                     widget: 16,
-                    mainBtn: 14,
-                    actionBtn: 10
+                    blocks: 14
                 },
                 sizes: {
                     fontSize: 1.0,
                     padding: 28,
-                    iconSize: 2.8,
-                    titleSize: 1.4,
-                    subtitleSize: 0.95,
-                    mainBtnSize: 1.15,
-                    actionBtnSize: 0.85,
-                    infoSize: 0.82,
-                    actionsGap: 12
+                    blockPadding: 18,
+                    gap: 12
                 },
                 shadow: {
                     widget: "0 16px 48px rgba(0,0,0,0.25)",
                     widgetHover: "0 24px 64px rgba(0,0,0,0.35)",
-                    text: "0 2px 8px rgba(0,0,0,0.3)",
-                    mainBtnHover: "0 8px 24px rgba(0,0,0,0.25)"
-                },
-                animation: {
-                    pulseDuration: "2.2s"
+                    text: "0 2px 8px rgba(0,0,0,0.3)"
                 }
             }
         };
@@ -342,9 +325,9 @@
             }
         }
 
-        // Сливаем объекты второго уровня в style
+        // Сливаем объекты второго уровня в style (как у countdown timer)
         if (result.style) {
-            for (const subKey of ['colors', 'borderRadius', 'sizes', 'shadow', 'animation']) {
+            for (const subKey of ['colors', 'borderRadius', 'sizes', 'shadow']) {
                 if (base.style[subKey] && typeof base.style[subKey] === 'object' && !Array.isArray(base.style[subKey])) {
                     result.style[subKey] = { ...(base.style[subKey] || {}), ...(override.style?.[subKey] || {}) };
                 }
@@ -406,19 +389,19 @@
         styleElement.textContent = generateUniqueStyles(uniqueClass, style);
     }
 
+    // УНИФИЦИРОВАННЫЕ CSS-ПЕРЕМЕННЫЕ (как у countdown timer)
     function generateUniqueStyles(uniqueClass, style) {
         const s = style;
         const colors = s.colors || {};
         const sizes = s.sizes || {};
         const borderRadius = s.borderRadius || {};
         const shadow = s.shadow || {};
-        const animation = s.animation || {};
         const fs = sizes.fontSize || 1;
 
         return `
             .${uniqueClass} {
                 --ctc-font: ${s.fontFamily || "'Inter', system-ui, sans-serif"};
-                --ctc-main-btn-font: ${s.mainBtnFont || "'JetBrains Mono', 'SF Mono', monospace"};
+                --ctc-value-font: ${s.valueFontFamily || "'JetBrains Mono', 'SF Mono', monospace"};
                 --ctc-max-width: ${Math.round(380 * fs)}px;
                 --ctc-bg: ${colors.background || "linear-gradient(135deg, #25d366 0%, #128c7e 100%)"};
                 --ctc-widget-radius: ${borderRadius.widget || 16}px;
@@ -428,32 +411,22 @@
                 --ctc-shadow: ${shadow.widget || "0 16px 48px rgba(0,0,0,0.25)"};
                 --ctc-shadow-hover: ${shadow.widgetHover || "0 24px 64px rgba(0,0,0,0.35)"};
                 --ctc-text-shadow: ${shadow.text || "0 2px 8px rgba(0,0,0,0.3)"};
-                --ctc-icon-size: ${(sizes.iconSize || 2.8) * fs}em;
-                --ctc-title-size: ${(sizes.titleSize || 1.4) * fs}em;
-                --ctc-title-color: ${colors.title || "inherit"};
-                --ctc-subtitle-size: ${(sizes.subtitleSize || 0.95) * fs}em;
-                --ctc-subtitle-color: ${colors.subtitle || "inherit"};
-                --ctc-main-btn-size: ${(sizes.mainBtnSize || 1.15) * fs}em;
-                --ctc-main-btn-size-mobile: ${(sizes.mainBtnSize || 1.15) * fs * 0.9}em;
-                --ctc-main-btn-color: ${colors.mainBtn || "inherit"};
-                --ctc-main-btn-bg: ${colors.mainBtnBg || "rgba(255, 255, 255, 0.22)"};
-                --ctc-main-btn-border: 2px solid ${colors.mainBtnBorder || "rgba(255, 255, 255, 0.35)"};
-                --ctc-main-btn-bg-hover: ${colors.mainBtnBgHover || "rgba(255, 255, 255, 0.3)"};
-                --ctc-main-btn-border-hover: ${colors.mainBtnBorderHover || "rgba(255, 255, 255, 0.55)"};
-                --ctc-main-btn-radius: ${borderRadius.mainBtn || 14}px;
-                --ctc-main-btn-shadow-hover: ${shadow.mainBtnHover || "0 8px 24px rgba(0,0,0,0.25)"};
-                --ctc-actions-gap: ${sizes.actionsGap || 12}px;
-                --ctc-actions-gap-mobile: ${Math.round((sizes.actionsGap || 12) * 0.8)}px;
-                --ctc-action-btn-size: ${(sizes.actionBtnSize || 0.85) * fs}em;
-                --ctc-action-btn-color: ${colors.actionBtn || "rgba(255, 255, 255, 0.9)"};
-                --ctc-action-btn-bg: ${colors.actionBtnBg || "rgba(255, 255, 255, 0.12)"};
-                --ctc-action-btn-border: 1px solid ${colors.actionBtnBorder || "rgba(255, 255, 255, 0.3)"};
-                --ctc-action-btn-bg-hover: ${colors.actionBtnBgHover || "rgba(255, 255, 255, 0.18)"};
-                --ctc-action-btn-border-hover: ${colors.actionBtnBorderHover || "rgba(255, 255, 255, 0.5)"};
-                --ctc-action-btn-radius: ${borderRadius.actionBtn || 10}px;
-                --ctc-info-size: ${(sizes.infoSize || 0.82) * fs}em;
-                --ctc-info-color: ${colors.info || "inherit"};
-                --ctc-pulse-duration: ${animation.pulseDuration || "2.2s"};
+                --ctc-icon-size: ${2.8 * fs}em;
+                --ctc-title-size: ${1.4 * fs}em;
+                --ctc-subtitle-size: ${0.95 * fs}em;
+                --ctc-main-btn-size: ${1.15 * fs}em;
+                --ctc-main-btn-size-mobile: ${1.05 * fs}em;
+                --ctc-block-bg: ${colors.blockBackground || "rgba(255, 255, 255, 0.22)"};
+                --ctc-block-border: 2px solid ${colors.blockBorder || "rgba(255, 255, 255, 0.35)"};
+                --ctc-block-bg-hover: ${colors.blockHover || "rgba(255, 255, 255, 0.3)"};
+                --ctc-block-border-hover: ${colors.borderHover || "rgba(255, 255, 255, 0.55)"};
+                --ctc-block-radius: ${borderRadius.blocks || 14}px;
+                --ctc-block-padding: ${sizes.blockPadding || 18}px ${Math.round((sizes.blockPadding || 18) * 1.3)}px;
+                --ctc-gap: ${sizes.gap || 12}px;
+                --ctc-gap-mobile: ${Math.round((sizes.gap || 12) * 0.8)}px;
+                --ctc-action-btn-size: ${0.85 * fs}em;
+                --ctc-info-size: ${0.82 * fs}em;
+                --ctc-pulse-duration: 2.2s;
             }
         `;
     }
@@ -461,6 +434,9 @@
     function createClickToCallWidget(container, config) {
         const cleanPhone = (config.phone || '').replace(/[^\d+]/g, '');
         const displayPhone = config.displayPhone || config.phone || '';
+
+        // Безопасное отображение иконки
+        const iconHtml = renderIcon(config);
 
         // Генерируем кнопки действий
         const actionsHTML = (config.actions || []).map(action => {
@@ -479,7 +455,7 @@
 
         container.innerHTML = `
             <div class="ctc-widget">
-                <div class="ctc-icon">${escapeHtml(config.icon)}</div>
+                ${iconHtml}
                 <h3 class="ctc-title">${escapeHtml(config.title)}</h3>
                 <p class="ctc-subtitle">${escapeHtml(config.subtitle)}</p>
                 
@@ -492,6 +468,26 @@
                 ${config.infoText ? `<div class="ctc-info-text">${escapeHtml(config.infoText)}</div>` : ''}
             </div>
         `;
+    }
+
+    // БЕЗОПАСНОЕ ОТОБРАЖЕНИЕ ИКОНОК
+    function renderIcon(config) {
+        // Приоритет: iconHtml > icon > ничего
+        if (config.iconHtml && config.iconHtml.trim()) {
+            // Если это HTML entity или простой HTML - вставляем как есть
+            if (config.iconHtml.includes('&') || config.iconHtml.includes('<')) {
+                return `<div class="ctc-icon">${config.iconHtml}</div>`;
+            }
+            // Если это эмодзи - экранируем
+            return `<div class="ctc-icon">${escapeHtml(config.iconHtml)}</div>`;
+        }
+        
+        if (config.icon && config.icon.trim()) {
+            return `<div class="ctc-icon">${escapeHtml(config.icon)}</div>`;
+        }
+        
+        // Нет иконки - не рендерим блок
+        return '';
     }
 
     function buildActionUrl(action, defaultPhone) {
