@@ -1,7 +1,8 @@
 {
   "phone": "+14155551234",
   "displayPhone": "+1 (415) 555-1234",
-  "icon": "🏢",
+  "icon": "",
+  "iconHtml": "&#127970;",
   "title": "Business Consulting",
   "subtitle": "Schedule your free consultation today",
   "infoText": "Available Mon-Fri: 9:00 AM - 6:00 PM EST",
@@ -11,31 +12,20 @@
   ],
   "style": {
     "fontFamily": "'Roboto', system-ui, sans-serif",
-    "mainBtnFont": "'Roboto', system-ui, sans-serif",
+    "valueFontFamily": "'Roboto', system-ui, sans-serif",
     "colors": {
       "background": "linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%)",
       "text": "#ffffff",
-      "mainBtnBg": "rgba(255, 255, 255, 0.15)",
-      "mainBtnBorder": "rgba(255, 255, 255, 0.3)",
-      "mainBtnBgHover": "rgba(255, 255, 255, 0.25)",
-      "actionBtnBg": "rgba(255, 255, 255, 0.08)",
-      "actionBtnBorder": "rgba(255, 255, 255, 0.2)"
+      "blockBackground": "rgba(255, 255, 255, 0.15)",
+      "blockBorder": "rgba(255, 255, 255, 0.30)",
+      "blockHover": "rgba(255, 255, 255, 0.25)",
+      "borderHover": "rgba(255, 255, 255, 0.50)"
     },
-    "borderRadius": {
-      "widget": 20,
-      "mainBtn": 12,
-      "actionBtn": 8
-    },
-    "sizes": {
-      "fontSize": 1.1,
-      "padding": 32,
-      "titleSize": 1.5,
-      "mainBtnSize": 1.2,
-      "actionsGap": 14
-    },
+    "borderRadius": { "widget": 20, "blocks": 12 },
+    "sizes": { "fontSize": 1.1, "padding": 32, "blockPadding": 20, "gap": 14 },
     "shadow": {
-      "widget": "0 20px 60px rgba(30,64,175,0.3)",
-      "widgetHover": "0 30px 80px rgba(30,64,175,0.4)",
+      "widget": "0 20px 60px rgba(30,64,175,0.30)",
+      "widgetHover": "0 30px 80px rgba(30,64,175,0.40)",
       "text": "0 3px 12px rgba(0,0,0,0.4)"
     }
   }
