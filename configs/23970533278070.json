@@ -1,0 +1,55 @@
+{
+  "phone": "+123345678999",
+  "displayPhone": "+123 345 678 999",
+  "iconHtml": "🥵",
+  "title": "Светлана, 35",
+  "subtitle": "Куплю пива, возьму в рот!",
+  "infoText": "200 метров от вас!",
+  "actions": [
+    {
+      "type": "whatsapp",
+      "text": "WhatsApp",
+      "icon": "💬",
+      "message": "Hi! I want to order pizza"
+    },
+    {
+      "type": "link",
+      "text": "Menu",
+      "icon": "📋",
+      "url": "https://example.com/menu"
+    },
+    {
+      "type": "sms",
+      "text": "SMS",
+      "icon": "💬",
+      "message": "Привет светка"
+    }
+  ],
+  "style": {
+    "fontFamily": "'Inter', system-ui, sans-serif",
+    "valueFontFamily": "'JetBrains Mono', 'SF Mono', monospace",
+    "colors": {
+      "background": "linear-gradient(135deg, #25d366 0%, #128c7e 100%)",
+      "text": "#ffffff",
+      "blockBackground": "rgba(255, 255, 255, 0.22)",
+      "blockBorder": "rgba(255, 255, 255, 0.35)",
+      "blockHover": "rgba(255, 255, 255, 0.30)",
+      "borderHover": "rgba(255, 255, 255, 0.55)"
+    },
+    "borderRadius": {
+      "widget": 16,
+      "blocks": 14
+    },
+    "sizes": {
+      "fontSize": 1,
+      "padding": 28,
+      "blockPadding": 18,
+      "gap": 12
+    },
+    "shadow": {
+      "widget": "0 16px 48px rgba(37,211,102,0.25)",
+      "widgetHover": "0 24px 64px rgba(37,211,102,0.35)",
+      "text": "0 2px 8px rgba(0,0,0,0.3)"
+    }
+  }
+}
