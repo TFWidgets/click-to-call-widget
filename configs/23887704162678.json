@@ -1,0 +1,49 @@
+{
+  "phone": "+420123456789",
+  "displayPhone": "+420 123 456 789",
+  "iconHtml": "🍕",
+  "title": "Order Pizza",
+  "subtitle": "Call now! Delivery in 30 minutes",
+  "infoText": "Business Hours: 10:00-23:00 daily",
+  "actions": [
+    {
+      "type": "sms",
+      "text": "WhatsApp",
+      "icon": "💬",
+      "message": "Hi! I want to order pizza"
+    },
+    {
+      "type": "link",
+      "text": "Menu",
+      "icon": "📋",
+      "url": "https://example.com/menu"
+    }
+  ],
+  "style": {
+    "fontFamily": "'Inter', system-ui, sans-serif",
+    "valueFontFamily": "'JetBrains Mono', 'SF Mono', monospace",
+    "colors": {
+      "background": "linear-gradient(135deg, #25d366 0%, #128c7e 100%)",
+      "text": "#ffffff",
+      "blockBackground": "rgba(255, 255, 255, 0.22)",
+      "blockBorder": "rgba(255, 255, 255, 0.35)",
+      "blockHover": "rgba(255, 255, 255, 0.30)",
+      "borderHover": "rgba(255, 255, 255, 0.55)"
+    },
+    "borderRadius": {
+      "widget": 16,
+      "blocks": 14
+    },
+    "sizes": {
+      "fontSize": 1,
+      "padding": 28,
+      "blockPadding": 18,
+      "gap": 12
+    },
+    "shadow": {
+      "widget": "0 16px 48px rgba(37,211,102,0.25)",
+      "widgetHover": "0 24px 64px rgba(37,211,102,0.35)",
+      "text": "0 2px 8px rgba(0,0,0,0.3)"
+    }
+  }
+}
