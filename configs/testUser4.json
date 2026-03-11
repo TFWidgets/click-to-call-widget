@@ -1,9 +1,9 @@
 {
   "phone": "+420123456789",
-  "displayPhone": "5345",
-  "iconHtml": "",
+  "displayPhone": "+420 123 456 789",
+  "iconHtml": "🍕",
   "title": "Order Pizza",
-  "subtitle": "5345345",
+  "subtitle": "Call now! Delivery in 30 minutes",
   "infoText": "Business Hours: 10:00-23:00 daily",
   "actions": [
     {
