@@ -1,8 +1,57 @@
 {
-  "phone": "+420 277 997 667",
-  "title": "Order Pizza", 
-  "subtitle": "Call now! Delivery in 30 minutes",
-  "theme": "restaurant",
-  "whatsapp": "Hi! I want to order pizza",
-  "menu": "https://example.com/menu"
+  "active": true,
+  "domains": [
+    "tf-widgets.com",
+    "*.tf-widgets.com"
+  ],
+  "layout": "card",
+  "position": "right",
+  "showOn": "all",
+  "fabLabel": "Call us",
+  "phone": "+1 415 555 0134",
+  "callLabel": "Call now",
+  "status": "Quick answers",
+  "iconHtml": "",
+  "logo": "",
+  "title": "Talk to us",
+  "subtitle": "Real people, fast replies. Call or message us, whichever suits you.",
+  "infoText": "",
+  "actions": [
+    {
+      "type": "whatsapp",
+      "text": "WhatsApp",
+      "message": "Hi! I have a question."
+    }
+  ],
+  "style": {
+    "fontFamily": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "valueFontFamily": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "colors": {
+      "background": "#ffffff",
+      "text": "#111111",
+      "accent": "#16a34a",
+      "widgetBorder": "rgba(17, 17, 17, 0.07)",
+      "blockBackground": "#16a34a",
+      "buttonText": "#ffffff",
+      "blockBorder": "transparent",
+      "actionBackground": "rgba(17, 17, 17, 0.04)",
+      "actionBorder": "rgba(17, 17, 17, 0.08)",
+      "actionHover": "rgba(17, 17, 17, 0.07)"
+    },
+    "borderRadius": {
+      "widget": 22,
+      "blocks": 18
+    },
+    "sizes": {
+      "fontSize": 1,
+      "padding": 28,
+      "gap": 8,
+      "width": 380
+    },
+    "shadow": {
+      "widget": "0 24px 60px -24px rgba(0, 0, 0, 0.35)",
+      "widgetHover": "0 30px 70px -24px rgba(0, 0, 0, 0.4)",
+      "text": "none"
+    }
+  }
 }
