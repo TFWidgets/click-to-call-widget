@@ -1,0 +1,59 @@
+{
+  "active": true,
+  "domains": [
+    "cdpn.io"
+  ],
+  "widget": "call",
+  "order": "#1014",
+  "site": "s21svq09y",
+  "layout": "card",
+  "position": "right",
+  "showOn": "all",
+  "fabLabel": "Call us",
+  "phone": "+1 415 555 0134",
+  "callLabel": "Call now",
+  "status": "Quick answers",
+  "iconHtml": "",
+  "logo": "",
+  "title": "Talk to us",
+  "subtitle": "Real people, fast replies. Call or message us, whichever suits you.",
+  "infoText": "",
+  "style": {
+    "fontFamily": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "valueFontFamily": "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "colors": {
+      "background": "#1e1b2e",
+      "text": "#f3f0ff",
+      "accent": "#8b5cf6",
+      "widgetBorder": "rgba(243, 240, 255, 0.1)",
+      "blockBackground": "#8b5cf6",
+      "buttonText": "#ffffff",
+      "blockBorder": "transparent",
+      "actionBackground": "rgba(243, 240, 255, 0.07)",
+      "actionBorder": "rgba(243, 240, 255, 0.14)",
+      "actionHover": "rgba(243, 240, 255, 0.12)"
+    },
+    "borderRadius": {
+      "widget": 22,
+      "blocks": 18
+    },
+    "sizes": {
+      "fontSize": 1,
+      "padding": 28,
+      "gap": 8,
+      "width": 380
+    },
+    "shadow": {
+      "widget": "0 24px 60px -24px rgba(0, 0, 0, 0.35)",
+      "widgetHover": "0 30px 70px -24px rgba(0, 0, 0, 0.4)",
+      "text": "none"
+    }
+  },
+  "actions": [
+    {
+      "type": "whatsapp",
+      "text": "WhatsApp",
+      "message": "Hi! I have a question."
+    }
+  ]
+}
